@@ -1,0 +1,23 @@
+<tr class="list-item" [ngClass]="renderClass()"  >
+    <td>
+        {{employee.firstName}} 
+        <div [className]="isDetailsActive ? 'details' : 'non-details'" >
+            <p>Start: {{employee.vacations.initialVacationDate | date :'shortDate' }}</p>
+            <p>End: {{employee.vacations.finalVacationDate | date :'shortDate' }}</p>
+            <p>Vac Days: {{vacDays }}</p>
+        </div>
+    </td>
+    <td>
+        {{employee.lastName}} 
+    </td>
+    <td>
+        {{employee.vacations.acceptance}} 
+    </td>
+    <td>
+        <app-acceptance-control value="test" (updateEmployeesListEvent)="updateEmployeesList($event)"></app-acceptance-control>
+    
+    </td>
+    <td>
+        <app-button-details (buttonDetailsEvent)="activateDetails()"></app-button-details>
+    </td>
+</tr>

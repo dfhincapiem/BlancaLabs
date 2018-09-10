@@ -1,0 +1,19 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">INBOX</span>
+    </nav>
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Vacations Status</th>
+            <th>Accept Request?</th>
+            <th>Details Vacations</th>
+          </tr>
+    </thead>
+    <tbody>
+        <app-item class="item" *ngFor="let employee of listEmployees" (updateEmployeesListEvent)="updateEmployeesList(employee.id, $event)" [employee]="employee"></app-item>
+  </tbody>
+  </table>
+</div>
